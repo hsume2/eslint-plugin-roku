@@ -67,9 +67,14 @@ const parseForESLint = (code: string) => {
 
 const configs = {
   recommended: {
-    parser: name,
     plugins: ['roku'],
-    rules: ruleConfig(),
+    overrides: [
+      {
+        files: ['*.brs'],
+        parser: name,
+        rules: ruleConfig()
+      }
+    ]
   },
 }
 
